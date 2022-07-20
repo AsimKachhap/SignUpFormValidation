@@ -4,9 +4,11 @@ import React from 'react'
 
 const FormInput = (props) => {
   return (
-    <div classNaame="formInput">
+    <div className="formInput">
         <label>Username</label>
-    <input placeHolder={props.placeHolder}/>
+    <input placeholder={props.placeHolder}
+    onChange={(e)=>  props.setUsername(e.target.value)
+        } />
     </div>
     
     

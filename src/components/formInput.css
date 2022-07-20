@@ -1,5 +1,8 @@
 input{
-    padding:15px;
-    margin:10px,0px;
+    padding:10px;
+    margin:15px,0px;
    
+}
+.formInput{
+    margin:15px;
 }
