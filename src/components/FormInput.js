@@ -1,14 +1,27 @@
 import "./formInput.css"
 
-import React from 'react'
+import React, { useState } from 'react'
 
 const FormInput = (props) => {
+  const[focused, setFocused]=useState(false);
+  const handleFocus = (e)=>{
+    setFocused(true);
+  }
+    const{label, errorMessage, onChange, id, ...inputProps}=props;
+
   return (
     <div className="formInput">
-        <label>Username</label>
-    <input placeholder={props.placeHolder}
-    onChange={(e)=>  props.setUsername(e.target.value)
-        } />
+      <label>{label}</label>
+      <input
+        {...inputProps}
+        onChange={onChange}
+        onBlur={handleFocus}
+        onFocus={() =>
+          inputProps.name === "confirmPassword" && setFocused(true)
+        }
+        focused={focused.toString()}
+      />
+      <span>{errorMessage}</span>
     </div>
     
     
